@@ -2,6 +2,7 @@
     margin: 0 auto;
     padding: 30px 15px;
     max-width: 1230px;
+    text-align: center;
 }
 
 .register-form__heading {
@@ -12,7 +13,7 @@
 .form {
     margin: 0 auto;
     width: 25%;
-    text-align: center;
+    text-align: left;
 }
 
 .form__group {
@@ -49,8 +50,8 @@
     height: 50px;
     border: none;
     border-radius: 3px;
-    background: #000;
-    color: #fff;
+    background: #ffe660;
+    color: #000;
     cursor: pointer;
 }
 
