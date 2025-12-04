@@ -5,32 +5,46 @@
 @endsection
 
 @section('content')
-<div class="attendance__alert">
-  // メッセージ機能
-</div>
+    <div class="container">
+        <div class="card-wrap">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2>商品一覧</h2>
+                <a href="{{ route('products.create') }}" class="btn-primary">+ 商品を追加</a>
+            </div>
 
-<div class="attendance__content">
-    <div class="attendance__panel">
-        <form class="attendance__button">
-        <button class="attendance__button-submit" type="submit">勤務開始</button>
-        </form>
-        <form class="attendance__button">
-        <button class="attendance__button-submit" type="submit">勤務終了</button>
-        </form>
+    <form method="get" action="{{ route('products.search') }}" class="form-inline mb-3">
+        <input type="text" name="search" class="form-control mr-2" placeholder="商品名で検索" value="{{ request('search') }}">
+        <button type="submit" form="search-form" class="btn btn-search">検索</button>
+        <select name="sort" class="form-control mr-2">
+            <option value="">価格で並び替え</option>
+            <option value="desc" {{ request('sort')=='desc' ? 'selected' : '' }}>高い順に表示</option>
+            <option value="asc" {{ request('sort')=='asc' ? 'selected' : '' }}>低い順位表示</option>
+        </select>
     </div>
-    <div class="attendance-table">
-        <table class="attendance-table__inner">
-        <tr class="attendance-table__row">
-            <th class="attendance-table__header">名前</th>
-            <th class="attendance-table__header">開始時間</th>
-            <th class="attendance-table__header">終了時間</th>
-        </tr>
-        <tr class="attendance-table__row">
-            <td class="attendance-table__item">サンプル太郎</td>
-            <td class="attendance-table__item">サンプル</td>
-            <td class="attendance-table__item">サンプル</td>
-        </tr>
-        </table>
+
+    </form>
+
+    <div class="row">
+        @foreach($products as $p)
+        <div class="col-md-4 mb-4">
+            <div class="card p-2">
+                <div class="img-box mb-2">
+                @if($p->image)
+                <img src="{{ asset($p->image) }}" alt="{{ $p->name }}" style="width:200px; height:180px; object-fit:cover;">
+                @else
+                <div style="width:200px; height:180px;display:flex;align-items:center;justify-content:center;color:#999;">No Image</div>
+                @endif
+            </div>
+        </div>
     </div>
-</div>
+    @endforeach
+        </div>
+
+        <div class="text-center">
+            {{ $products->links('vendor.pagination.simple-default') }}
+        </div>
+    </main>
+    </div>
+    </div>
+
 @endsection

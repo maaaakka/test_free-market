@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +14,30 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return redirect()->route('products.index');
+});
 
-// Route::get('/', [AuthController::class, 'index']);
+Route::prefix('products')->name('products.')->group(function () {
 
-Route::middleware('auth')->group(function () {
-    Route::get('/', [AuthController::class, 'index']);
+    // 一覧
+    Route::get('/', [ProductController::class, 'index'])->name('index');
+
+    // 検索
+    Route::get('/search', [ProductController::class, 'search'])->name('search');
+
+    // 登録
+    Route::get('/register', [ProductController::class, 'create'])->name('create');
+    Route::post('/register', [ProductController::class, 'store'])->name('store');
+
+    // 詳細（編集画面）
+    Route::get('/detail/{product}', [ProductController::class, 'detail'])->name('detail');
+
+    // 更新
+    Route::get('/{product}/update', [ProductController::class, 'edit'])->name('edit');
+    Route::put('/{product}/update', [ProductController::class, 'update'])->name('update');
+
+    // 削除
+    Route::get('/{product}/delete', [ProductController::class, 'deleteConfirm'])->name('delete');
+    Route::delete('/{product}/delete', [ProductController::class, 'destroy'])->name('destroy');
 });

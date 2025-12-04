@@ -40,22 +40,26 @@
     appearance: none;
 }
 
-.form__button {
-    margin-top: 20px;
+.register-form__btn-inner {
+    display: flex;
+    justify-content: center;
 }
 
-.form__button-submit {
-    padding: 10px;
-    width: 30%;
-    height: 50px;
-    border: none;
-    border-radius: 3px;
-    background: #ffe660;
+.register-form__button {
+    margin-top: 32px;
+    
+        gap: 32px;
+        background: #f2b705;
+        color: #000;
+        text-align: center;
+        cursor: pointer;
+}
+
+.register-form__back-btn {
+    margin-top: 32px;
+    gap: 32px;
+    background: #ddd;
     color: #000;
-    cursor: pointer;
-}
-
-.login__link {
-    margin-top: 20px;
     text-align: center;
+    cursor: pointer;
 }

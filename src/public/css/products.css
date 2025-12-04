@@ -1,69 +1,154 @@
-.attendance__alert--success {
-    padding: 10px 30px;
-    border-color: #badbcc;
-    background-color: #d1e7dd;
-    color: #0f5132;
+body {
+    background: #f6f6f6;
+    font-family: "Noto San JP", "Helvetica Neue", Arial, sans-serif;
 }
 
-.attendance__alert--danger {
-    padding: 10px 0;
-    border-color: #f5c2c7;
-    background-color: #f8d7da;
-    color: #842029;
+.card-wrap {
+    background: #fff;
+    border-radius: 6px;
+    padding: 30px;
 }
 
-.attendance__alert--danger ul {
-    margin: 0;
+h2 {
+    margin-bottom: 1rem;
+    font-weight: 600;
 }
 
-.attendance__panel {
-    margin: 0 auto;
-    width: 70%;
-}
-
-.attendance__button {
-    width: 100%;
-    text-align: center;
-}
-
-.attendance__button-submit {
-    padding: 5px;
-    width: 30%;
-    height: 50px;
+.btn-primary {
+    background: #f2b705;
+    color: #000;
     border: none;
-    border-radius: 3px;
-    background: #000;
-    color: #fff;
+    padding: 10px 22px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
     cursor: pointer;
 }
 
-.attendance__content {
-    margin: 0 auto;
-    padding: 30px 15px;
-    max-width: 1230px;
+.btn-secondary {
+    background: #e6e6e6;
+    color: #000;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-size: 18px;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.attendance-table {
-    margin: 30px auto;
-    width: 70%;
-    text-align: center;
+.img-box {
+    border: 1px sold #e6e6e6;
+    padding: 8px;
+    background: #fff;
 }
 
-.attendance-table__inner {
-    width: 100%;
+.text-danger {
+    color: #ff0000;
+    margin-top: 6px;
 }
 
-.attendance-table__row {
-    border-bottom: 1px solid #ddd;
+.season-list {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 8px;
 }
 
-.attendance-table__header {
-    padding: 12px;
-    width: 20%;
-    font-weight: bold;
+.round-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
 }
 
-.attendance-table__item {
-    padding: 12px;
-    width: 20%;
+.round-checkbox input[type="checkbox"]{
+    display: none;
 }
+
+.round-checkbox .circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #bbb;
+    display: inline-block;
+    margin-right: 8px;
+    position: relative;
+}
+
+.round-checkbox input[type="checkbox"]:checked + .circle:after {
+content: "";
+position: absolute;
+top: 3px;
+left: 3px;
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background: #000;
+}
+
+.round-checkbox .season-label {
+    font-size: 14px;
+    color: #000;
+}
+
+.product-card {
+    display: block;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+    background-color: #fff;
+    transition: transform .12s ease;
+}
+
+.file-btn {
+    display: inline-block;
+    border: 1px solid #bbb;
+    padding: 6px 10px;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.file-name {
+    margin-left: 10px;
+    color: #000;
+}
+
+
+
+/* .product-card:hover {
+    transform: translate(-4px);
+}
+
+.img-wrap {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.img-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: .75rem .9rem;
+}
+
+.product-name {
+    font-size: 1rem;
+    margin: 0 0 .35rem 0;
+}
+
+.product-price {
+    color: #000;
+    font-weight: 600;
+}
+ */
